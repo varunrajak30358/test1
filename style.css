@@ -1,0 +1,432 @@
+/* ============================================================
+   style.css — ChargeAgent Streamlit Custom Stylesheet
+   Light / white system theme with colorful gradient header
+   ============================================================ */
+
+/* ---------- Global reset & base ---------- */
+html, body, [class*="css"] {
+    font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif !important;
+    background-color: #f5f7fa !important;
+    color: #1a202c !important;
+}
+
+/* ---------- Main container ---------- */
+.main .block-container {
+    padding-top: 1rem !important;
+    padding-bottom: 2rem !important;
+    max-width: 100% !important;
+    background-color: #f5f7fa !important;
+}
+
+/* ---------- Gradient header banner (stays vibrant on light bg) ---------- */
+.header-banner {
+    background: linear-gradient(135deg, #1a1d2e 0%, #0d1b2a 40%, #16213e 70%, #0f3460 100%);
+    border: none;
+    border-radius: 16px;
+    padding: 28px 36px 24px 36px;
+    margin-bottom: 24px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(14,27,42,0.18);
+}
+
+.header-banner::before {
+    content: '';
+    position: absolute;
+    top: -60px; left: -60px;
+    width: 200px; height: 200px;
+    background: radial-gradient(circle, rgba(46,134,171,0.30) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.header-banner::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; right: -40px;
+    width: 160px; height: 160px;
+    background: radial-gradient(circle, rgba(241,143,1,0.22) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.header-title {
+    font-size: 2.1rem;
+    font-weight: 800;
+    background: linear-gradient(90deg, #2E86AB, #F18F01, #A23B72);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 0 0 6px 0;
+    line-height: 1.2;
+}
+
+.header-subtitle {
+    font-size: 0.95rem;
+    color: #b0bec5;
+    margin: 0;
+    letter-spacing: 0.02em;
+}
+
+.header-badge {
+    display: inline-block;
+    background: rgba(46,134,171,0.25);
+    border: 1px solid rgba(46,134,171,0.45);
+    color: #7ecee8;
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-right: 8px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+/* ---------- Sidebar ---------- */
+section[data-testid="stSidebar"] {
+    background: #ffffff !important;
+    border-right: 1px solid #e2e8f0 !important;
+}
+
+section[data-testid="stSidebar"] .block-container {
+    padding: 1.5rem 1.2rem !important;
+    background: #ffffff !important;
+}
+
+/* All sidebar text */
+section[data-testid="stSidebar"] * {
+    color: #1a202c !important;
+}
+
+.sidebar-logo {
+    text-align: center;
+    padding: 10px 0 20px 0;
+    border-bottom: 1px solid #e2e8f0;
+    margin-bottom: 20px;
+}
+
+.sidebar-logo h2 {
+    font-size: 1.4rem;
+    font-weight: 800;
+    background: linear-gradient(90deg, #2E86AB, #F18F01);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 4px 0 0 0;
+}
+
+.sidebar-section-label {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #94a3b8 !important;
+    margin: 20px 0 8px 0;
+    padding-left: 2px;
+}
+
+/* ---------- Generate button ---------- */
+div[data-testid="stButton"] > button {
+    width: 100% !important;
+    background: linear-gradient(135deg, #2E86AB 0%, #1a6a8a 100%) !important;
+    color: white !important;
+    font-size: 1.02rem !important;
+    font-weight: 700 !important;
+    border: none !important;
+    border-radius: 10px !important;
+    padding: 14px 24px !important;
+    letter-spacing: 0.03em !important;
+    cursor: pointer !important;
+    transition: all 0.25s ease !important;
+    box-shadow: 0 4px 20px rgba(46, 134, 171, 0.30) !important;
+}
+
+div[data-testid="stButton"] > button:hover {
+    background: linear-gradient(135deg, #F18F01 0%, #d4790d 100%) !important;
+    box-shadow: 0 6px 24px rgba(241, 143, 1, 0.40) !important;
+    transform: translateY(-1px) !important;
+}
+
+div[data-testid="stButton"] > button:active {
+    transform: translateY(0) !important;
+}
+
+/* ---------- Metric cards ---------- */
+.metric-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 18px 20px 16px 20px;
+    text-align: center;
+    transition: all 0.25s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.metric-card:hover {
+    border-color: #2E86AB;
+    box-shadow: 0 6px 24px rgba(46, 134, 171, 0.14);
+    transform: translateY(-2px);
+}
+
+.metric-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #2E86AB, #F18F01);
+}
+
+.metric-icon {
+    font-size: 1.8rem;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.metric-value {
+    font-size: 1.65rem;
+    font-weight: 800;
+    color: #1a202c;
+    line-height: 1.1;
+    margin-bottom: 4px;
+}
+
+.metric-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: #64748b;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.metric-card.high    { border-color: rgba(231,76,60,0.4); }
+.metric-card.medium  { border-color: rgba(241,143,1,0.4); }
+.metric-card.low     { border-color: rgba(100,116,139,0.35); }
+
+.metric-card.high::before   { background: linear-gradient(90deg, #e74c3c, #c0392b); }
+.metric-card.medium::before { background: linear-gradient(90deg, #f39c12, #d68910); }
+.metric-card.low::before    { background: linear-gradient(90deg, #94a3b8, #64748b); }
+
+/* ---------- Recommendation box ---------- */
+.recommendation-box {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-left: 4px solid #2E86AB;
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin: 16px 0;
+    line-height: 1.8;
+    font-size: 0.96rem;
+    color: #334155;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.recommendation-box .rec-title {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #2E86AB;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.recommendation-box strong {
+    color: #1a202c;
+    font-weight: 700;
+}
+
+/* ---------- Section headers ---------- */
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 28px 0 16px 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.section-header h3 {
+    margin: 0;
+    font-size: 1.08rem;
+    font-weight: 700;
+    color: #1a202c;
+    letter-spacing: 0.02em;
+}
+
+.section-icon {
+    font-size: 1.3rem;
+}
+
+/* ---------- Info box ---------- */
+.info-box {
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-radius: 10px;
+    padding: 12px 16px;
+    font-size: 0.88rem;
+    color: #1e40af;
+    margin: 8px 0;
+}
+
+/* ---------- Model info table ---------- */
+.model-info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 9px 0;
+    border-bottom: 1px solid #f1f5f9;
+    font-size: 0.88rem;
+}
+
+.model-info-key {
+    color: #64748b;
+    font-weight: 500;
+    flex: 0 0 42%;
+}
+
+.model-info-val {
+    color: #1a202c;
+    font-weight: 600;
+    flex: 0 0 56%;
+    text-align: right;
+    word-break: break-word;
+}
+
+/* ---------- Streamlit widget overrides — light theme ---------- */
+div[data-baseweb="select"] > div {
+    background-color: #ffffff !important;
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 8px !important;
+    color: #1a202c !important;
+}
+
+/* Radio buttons */
+.stRadio > div > label {
+    color: #334155 !important;
+}
+
+/* Tabs */
+.stTabs [data-baseweb="tab-list"] {
+    background: #f1f5f9 !important;
+    border-radius: 10px 10px 0 0 !important;
+    gap: 4px !important;
+}
+
+.stTabs [data-baseweb="tab"] {
+    background: transparent !important;
+    color: #64748b !important;
+    font-weight: 600 !important;
+    border-radius: 8px !important;
+    padding: 8px 18px !important;
+    transition: all 0.2s !important;
+}
+
+.stTabs [aria-selected="true"] {
+    background: #ffffff !important;
+    color: #2E86AB !important;
+    border-bottom: 2px solid #2E86AB !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.06) !important;
+}
+
+/* Expander */
+div[data-testid="stExpander"] {
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 10px !important;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04) !important;
+}
+
+/* Progress bars */
+.stProgress > div > div > div > div {
+    background: linear-gradient(90deg, #2E86AB, #F18F01) !important;
+}
+
+/* Download button */
+.stDownloadButton > button {
+    background: #eff6ff !important;
+    border: 1px solid #bfdbfe !important;
+    color: #1d4ed8 !important;
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+    transition: all 0.2s !important;
+}
+
+.stDownloadButton > button:hover {
+    background: #dbeafe !important;
+    border-color: #2E86AB !important;
+    color: #1a6a8a !important;
+}
+
+/* File uploader */
+div[data-testid="stFileUploadDropzone"] {
+    background: #f8fafc !important;
+    border: 2px dashed #cbd5e1 !important;
+    border-radius: 10px !important;
+}
+
+/* Data table */
+div[data-testid="stDataFrame"] {
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 10px !important;
+    overflow: hidden !important;
+    background: #ffffff !important;
+}
+
+/* Selectbox label */
+label[data-testid="stWidgetLabel"] {
+    color: #374151 !important;
+    font-weight: 600 !important;
+    font-size: 0.88rem !important;
+}
+
+/* Sidebar nav radio */
+section[data-testid="stSidebar"] .stRadio label {
+    color: #334155 !important;
+    font-size: 0.92rem !important;
+}
+
+/* Sidebar info box */
+.sidebar-info {
+    background: #f0f9ff;
+    border: 1px solid #bae6fd;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 0.82rem;
+    color: #0369a1;
+    margin-top: 12px;
+    line-height: 1.6;
+}
+
+/* ---------- Scrollbar ---------- */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #2E86AB; }
+
+/* ---------- Divider ---------- */
+hr {
+    border: none !important;
+    border-top: 1px solid #e2e8f0 !important;
+    margin: 20px 0 !important;
+}
+
+/* ---------- General text in main area ---------- */
+.main p, .main span, .main div {
+    color: #334155;
+}
+
+/* ---------- Plotly chart container ---------- */
+.js-plotly-plot {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* ---------- Responsive tweaks ---------- */
+@media (max-width: 768px) {
+    .header-title { font-size: 1.5rem; }
+    .metric-value { font-size: 1.3rem; }
+}
